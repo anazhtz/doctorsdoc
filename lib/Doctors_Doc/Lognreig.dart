@@ -15,7 +15,7 @@ class Docrelo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:Color(0xFFD9E4EE),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -50,7 +50,7 @@ class Docrelo extends StatelessWidget {
                     style: TextButton.styleFrom(
                       fixedSize: Size(320, 80),
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.purple,
+                      backgroundColor: Colors.red[900],
                       textStyle: TextStyle(fontSize: 20),
                       shape: RoundedRectangleBorder(
                           side: BorderSide(style: BorderStyle.none),
@@ -68,7 +68,7 @@ class Docrelo extends StatelessWidget {
                     style: TextButton.styleFrom(
                       fixedSize: Size(320, 80),
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.red[700],
+                      backgroundColor: Colors.black,
                       textStyle: TextStyle(fontSize: 20),
                       shape: RoundedRectangleBorder(
                           side: BorderSide(style: BorderStyle.none),
@@ -82,14 +82,13 @@ class Docrelo extends StatelessWidget {
                     },
                     child: Text("SIGN UP")),
                 SizedBox(
-                  height: 50,
+                  height: 40,
                 ),Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SquareTile(imagePath: 'images/google-icon.png'),
-                    const SizedBox(width: 10,),
+                    const SizedBox(width: 25,),
                     SquareTile(imagePath: 'images/applelogo.png'),
-
                   ],
                 )
               ],

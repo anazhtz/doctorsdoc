@@ -23,9 +23,7 @@ class MyApp extends StatelessWidget{
      home: Docsplash(),
    );
   }
-
 }
-
 class Docsplash extends StatefulWidget{
   @override
   State<Docsplash> createState() => _DocsplashState();
@@ -41,12 +39,12 @@ class _DocsplashState extends State<Docsplash> {
 //     super.initState();
 //   }
   Widget build(BuildContext context) {
-   return AnimatedSplashScreen(backgroundColor: Colors.white,
+   return AnimatedSplashScreen(backgroundColor: Color(0xFFD9E4EE),
      splash: Column(
        children: [
          Center(child: Lottie.asset("images/Doc lottie.json",width: 350,height:350,
              fit: BoxFit.cover)),
-         Center(child: Text("Doctors Doc",style:GoogleFonts.montserrat(
+         Center(child: Text("Doctors Doc",style:GoogleFonts.aBeeZee(
              fontWeight: FontWeight.bold,fontSize: 40,color: Colors.blue[800]),
     ))],
      ), nextScreen: Docrelo(),
