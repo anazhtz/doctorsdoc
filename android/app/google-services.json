@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "368792027408",
+    "project_id": "doctorsdoc-be3d4",
+    "storage_bucket": "doctorsdoc-be3d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368792027408:android:c6bb81cbb769688f362595",
+        "android_client_info": {
+          "package_name": "com.example.doctorsdoc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4Yl3MCVmVCQEj-wNUrQmjZGrCcyfwYts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

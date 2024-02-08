@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'Loginpage.dart';
-import 'Registarationpage.dart';
+import '../Registerpage/Registarationpage.dart';
 
 void main() {
   runApp(MaterialApp(

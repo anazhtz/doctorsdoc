@@ -1,14 +1,23 @@
 import 'package:doctorsdoc/Doctors_Doc/Forgotpass/Forgotpass_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../admin_loginpage/adminpannel.dart';
 import 'Homepage.dart';
-import 'Registarationpage.dart';
+import '../Registerpage/Registarationpage.dart';
 import 'SquareTile.dart';
+import 'firebasehelper/helperfirebase.dart';
 
-void main(){
-  runApp(MaterialApp(home: Loginpage(),));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(GetMaterialApp(
+    home: Loginpage(),
+  ));
 }
 class Loginpage extends StatefulWidget{
   @override
@@ -16,7 +25,11 @@ class Loginpage extends StatefulWidget{
 }
 
 class _LoginpageState extends State<Loginpage> {
-  GlobalKey<FormState> formkey=GlobalKey();
+
+  //late SharedPreferences
+  var formkey = GlobalKey<FormState>();
+  String? email;
+  String? passs;
     bool showpass=true;
 
 TextEditingController usernamecontroller=TextEditingController();
@@ -64,7 +77,10 @@ TextEditingController passwordcontroller=TextEditingController();
                       else{
                         return null;
                       }
-                    }
+                    },
+                  onSaved: (ename) {
+                    email = ename;
+                  },
                 ),
               ),
               const SizedBox(height: 25,),
@@ -100,7 +116,11 @@ TextEditingController passwordcontroller=TextEditingController();
                       }else{
                         return null;
                       }
-                    }
+                    },
+                  onSaved: (pwd) {
+                     passs = pwd;
+                  },
+
                 ),
               ),
               const SizedBox(height: 25,),
@@ -128,12 +148,22 @@ TextEditingController passwordcontroller=TextEditingController();
                         side: BorderSide(style: BorderStyle.none),
                         borderRadius: BorderRadius.circular(8)),
                   ),
-                  onPressed: () {
+                  onPressed: () async {
                     final valid=formkey.currentState!.validate();
                     if (valid){
-                      Get.to(Homepage());
-                    }else{
-                      return null;
+                      if (formkey.currentState!.validate()) {
+                        formkey.currentState!.save();
+                         await FireHelper().signIn(mail: email!, pass: passs!).then((type){
+                          print("Type $type");
+                          if(type == "client"){
+                            Get.to(Homepage());
+                          } else if (type == "admin") {
+                            Get.to(Adminhome());
+                          } else{
+                            Get.snackbar("Error", "User not found $type");
+                          }
+                        });
+                      }
                     }
                   },
                   child: Text("LOGIN")),

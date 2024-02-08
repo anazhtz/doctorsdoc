@@ -1,14 +1,26 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
+import 'Loginpage.dart';
 import 'Screens/DoctorsSec.dart';
+import 'Screens/appoinmentscreen.dart';
+import 'Screens/notification_screen.dart';
 
-void main(){
-  runApp(MaterialApp(
-    home: Homepage(),
-  ));
-}
+// void main(){
+//   runApp(MaterialApp(
+//     home: StreamBuilder<User?>(
+//   stream: FirebaseAuth.instance.authStateChanges(),
+//       builder: ((context, snapshot) {
+//         if (snapshot.hasData) {
+//           return Homepage();
+//         } else {
+//           return Loginpage();
+//        }
+//         }),
+//   )));
+// }
 
 class Homepage extends StatelessWidget{
 
@@ -75,8 +87,8 @@ class Homepage extends StatelessWidget{
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Colors.blue.shade300,
-                      Colors.blue.shade700,
+                      Colors.red.shade300,
+                      Colors.red.shade700,
                     ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter
@@ -101,11 +113,22 @@ class Homepage extends StatelessWidget{
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                CircleAvatar(radius: 30,
+                                const CircleAvatar(radius: 30,
                                   backgroundImage: AssetImage("Doctors/Doc4.jpg"),
                                 ),
-                                IconButton(onPressed: (){}, icon: Icon(Icons.notifications_outlined,
-                                color: Colors.white,size: 30,)
+                                Row(
+                                  children: [
+                                    IconButton(onPressed: (){
+                                      FirebaseAuth.instance.signOut();
+                                      // Navigator.pushNamed(context, "/Loginpage");
+                                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Loginpage()));
+                                    }, icon: Icon(Icons.logout,color: Colors.white,size: 30,)),
+                                    IconButton(onPressed: (){
+                                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Notificationscr()));
+                                    }, icon: Icon(Icons.notifications_outlined,
+                                    color: Colors.white,size: 30,)
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -188,7 +211,10 @@ class Homepage extends StatelessWidget{
                                   ]
                                 ),
                                 child: Center(
-                                  child: Image(image: AssetImage(catIcon[index]))
+                                  child: InkWell(
+                                  onTap: () {
+                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>AppoinmentScreen()));
+                                  },child: Image(image: AssetImage(catIcon[index])))
                                 ),
                                 ),
                               SizedBox(height: 10,),
