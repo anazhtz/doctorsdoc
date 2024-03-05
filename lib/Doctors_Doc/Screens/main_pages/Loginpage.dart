@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../admin_loginpage/adminpannel.dart';
+import '../../../admin_loginpage/adminpannel.dart';
 import 'Homepage.dart';
-import '../Registerpage/Registarationpage.dart';
+import '../../../Registerpage/Registarationpage.dart';
 import 'SquareTile.dart';
-import 'firebasehelper/helperfirebase.dart';
+import '../../firebasehelper/helperfirebase.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

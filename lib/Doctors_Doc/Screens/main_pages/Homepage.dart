@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 import 'Loginpage.dart';
-import 'Screens/DoctorsSec.dart';
-import 'Screens/appoinmentscreen.dart';
-import 'Screens/notification_screen.dart';
+import 'DoctorsSec.dart';
+import 'appoinmentscreen.dart';
+import 'notification_screen.dart';
 
 // void main(){
 //   runApp(MaterialApp(

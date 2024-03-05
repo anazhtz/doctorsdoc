@@ -1,6 +1,6 @@
 import 'package:calendar_timeline/calendar_timeline.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doctorsdoc/Doctors_Doc/Homepage.dart';
+import 'package:doctorsdoc/Doctors_Doc/Screens/main_pages/Homepage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

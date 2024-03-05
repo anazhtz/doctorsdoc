@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:doctorsdoc/Doctors_Doc/Lognreig.dart';
+import 'package:doctorsdoc/Doctors_Doc/Screens/main_pages/Lognreig.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

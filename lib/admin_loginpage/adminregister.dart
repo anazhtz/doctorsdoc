@@ -1,4 +1,4 @@
-import 'package:doctorsdoc/Doctors_Doc/Loginpage.dart';
+import 'package:doctorsdoc/Doctors_Doc/Screens/main_pages/Loginpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

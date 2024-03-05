@@ -1,9 +1,9 @@
-import 'package:doctorsdoc/Doctors_Doc/SquareTile.dart';
+import 'package:doctorsdoc/Doctors_Doc/Screens/main_pages/SquareTile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'Loginpage.dart';
-import '../Registerpage/Registarationpage.dart';
+import '../../../Registerpage/Registarationpage.dart';
 
 void main() {
   runApp(MaterialApp(
